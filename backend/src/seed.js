@@ -20,7 +20,7 @@ const destinations = [
     ],
     best_season: 'October – March',
     distance: '260 km from Delhi',
-    image: 'https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?w=1600&q=80',
+    image: 'https://cdn.gamma.app/yqnjlktvyepx0zq/design-anything/Jdzbg4YclP1VJBw0jivZq/KKAS9WriAzCJJgjUbFgYL.jpg',
     sort: 1,
   },
   {
@@ -38,7 +38,7 @@ const destinations = [
     ],
     best_season: 'October – March',
     distance: 'In the city',
-    image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1600&q=80',
+    image: 'https://cdn.gamma.app/yqnjlktvyepx0zq/design-anything/gj4kEuKGavc07FD99bgTW/P4wXqg-oJLfjHh7YuL9jM.jpg',
     sort: 2,
   },
 ];
@@ -49,42 +49,42 @@ const venues = [
     type: 'Riverside Resort', capacity_min: 50, capacity_max: 300, price_from: 1800000,
     description: 'A riverfront lawn for pheras at sunset, with 60 cottages tucked among mango orchards.',
     features: ['Riverside mandap', '60 cottages', 'Infinity pool', 'In-house safari desk'],
-    image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80',
+    image: 'https://cdn.gamma.app/yqnjlktvyepx0zq/design-anything/XtxNCRylHYEjhkY3HkTaY/W0htQoBfuJ0pGC7_mOPBl.jpg',
   },
   {
     slug: 'sal-forest-lodge', destination: 'jim-corbett', name: 'Sal Forest Lodge',
     type: 'Jungle Lodge', capacity_min: 30, capacity_max: 150, price_from: 1200000,
     description: 'An intimate jungle lodge on the edge of the buffer zone, built for boutique weddings.',
     features: ['Forest-view banquet', '32 luxury tents', 'Bonfire courtyard', 'Spa'],
-    image: 'https://images.unsplash.com/photo-1510076857177-7470076d4098?w=1200&q=80',
+    image: 'https://cdn.gamma.app/yqnjlktvyepx0zq/design-anything/Hf3yODIxBMclbh6IHcYIO/WR5fntRjkiFn9FJu2T02a.jpg',
   },
   {
     slug: 'shivalik-hills-palace', destination: 'jim-corbett', name: 'Shivalik Hills Palace',
     type: 'Heritage Resort', capacity_min: 100, capacity_max: 450, price_from: 2800000,
     description: 'A colonial-style estate with manicured lawns and views across the Shivalik range.',
     features: ['3 event lawns', '110 rooms', 'Ballroom', 'Helipad access'],
-    image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80',
+    image: 'https://cdn.gamma.app/yqnjlktvyepx0zq/design-anything/h88bQ5AV94iCH0KpJguhf/bGUvWdUzsAtr-cehL9_97.jpg',
   },
   {
     slug: 'chhattarpur-grand-farms', destination: 'delhi-ncr', name: 'Chhattarpur Grand Farms',
     type: 'Farmhouse', capacity_min: 200, capacity_max: 1500, price_from: 2500000,
     description: 'Eight acres of lawns and a glass pavilion in South Delhi’s farmhouse belt.',
     features: ['8-acre lawns', 'Glass pavilion', 'Valet for 400 cars', 'Bridal suite'],
-    image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&q=80',
+    image: 'https://cdn.gamma.app/yqnjlktvyepx0zq/design-anything/SdjERbkZMGvCs7v4MNQ4r/JFHsEkgnHsXh85AOB_gkF.jpg',
   },
   {
     slug: 'aravali-palace-gurugram', destination: 'delhi-ncr', name: 'Aravali Palace, Gurugram',
     type: 'Palace Hotel', capacity_min: 150, capacity_max: 1200, price_from: 4500000,
     description: 'Mughal arches, fountains and 200 suites on the Delhi–Jaipur highway.',
     features: ['200 suites', 'Courtyard mandap', 'Pillarless ballroom', 'Royal baraat route'],
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80',
+    image: 'https://cdn.gamma.app/yqnjlktvyepx0zq/design-anything/gj4kEuKGavc07FD99bgTW/P4wXqg-oJLfjHh7YuL9jM.jpg',
   },
   {
     slug: 'yamuna-banks-noida', destination: 'delhi-ncr', name: 'Yamuna Banks Estate, Noida',
     type: 'Luxury Lawn', capacity_min: 300, capacity_max: 2000, price_from: 2000000,
     description: 'A sprawling estate in Greater Noida with river views and a dedicated sangeet arena.',
     features: ['Sangeet arena', 'Multiple lawns', 'Close to expressway', 'Ample parking'],
-    image: 'https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=1200&q=80',
+    image: 'https://cdn.gamma.app/yqnjlktvyepx0zq/design-anything/gRv3q6TR1CimzuULaELHt/pFVL4CEIxARJNMi5MwnsX.jpg',
   },
 ];
 
@@ -119,13 +119,13 @@ export async function seed(db, { adminEmail, adminPassword } = {}) {
   db.exec('BEGIN');
   try {
     const insDest = db.prepare(`INSERT INTO destinations (slug,name,region,tagline,description,highlights,best_season,distance,image,sort)
-      VALUES (?,?,?,?,?,?,?,?,?,?) ON CONFLICT(slug) DO NOTHING`);
+      VALUES (?,?,?,?,?,?,?,?,?,?) ON CONFLICT(slug) DO UPDATE SET image = excluded.image`);
     for (const d of destinations) {
       insDest.run(d.slug, d.name, d.region, d.tagline, d.description, JSON.stringify(d.highlights), d.best_season, d.distance, d.image, d.sort);
     }
     const destId = db.prepare('SELECT id FROM destinations WHERE slug = ?');
     const insVenue = db.prepare(`INSERT INTO venues (slug,destination_id,name,type,capacity_min,capacity_max,price_from,description,features,image)
-      VALUES (?,?,?,?,?,?,?,?,?,?) ON CONFLICT(slug) DO NOTHING`);
+      VALUES (?,?,?,?,?,?,?,?,?,?) ON CONFLICT(slug) DO UPDATE SET image = excluded.image`);
     for (const v of venues) {
       insVenue.run(v.slug, destId.get(v.destination).id, v.name, v.type, v.capacity_min, v.capacity_max, v.price_from, v.description, JSON.stringify(v.features), v.image);
     }

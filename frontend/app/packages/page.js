@@ -3,6 +3,7 @@ import { PackageCard } from '@/components/Cards';
 import Media from '@/components/Media';
 import { SectionHead } from '@/components/Ornament';
 import { api } from '@/lib/api';
+import { IMG } from '@/lib/images';
 
 export const metadata = { title: 'Wedding Packages', description: 'All-inclusive destination wedding packages for Jim Corbett and Delhi NCR.' };
 
@@ -10,7 +11,7 @@ export default async function PackagesPage() {
   const packages = await api('/packages');
   return (
     <>
-      <Media src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=2000&q=80" className="hero hero--short" warm>
+      <Media src={IMG.baraat} className="hero hero--short" warm>
         <div className="hero__content">
           <span className="eyebrow">Transparent Pricing</span>
           <h1>Wedding Packages</h1>

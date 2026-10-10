@@ -3,7 +3,7 @@ import { test as base, expect } from '@playwright/test';
 // External photos are unreachable in CI sandboxes; abort them fast so the gradient fallback renders.
 export const test = base.extend({
   page: async ({ page }, use) => {
-    await page.route(/images\.unsplash\.com/, (r) => r.abort());
+    await page.route(/images\.unsplash\.com|cdn\.gamma\.app/, (r) => r.abort());
     const errors = [];
     page.on('pageerror', (e) => errors.push(e.message));
     await use(page);

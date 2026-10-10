@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const IMAGE_HOSTS = 'https://images.unsplash.com';
+const IMAGE_HOSTS = 'https://images.unsplash.com https://cdn.gamma.app';
 
 export function proxy(request) {
   const { pathname } = request.nextUrl;

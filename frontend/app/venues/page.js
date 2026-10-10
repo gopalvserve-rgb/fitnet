@@ -3,6 +3,7 @@ import { VenueCard } from '@/components/Cards';
 import Media from '@/components/Media';
 import { SectionHead } from '@/components/Ornament';
 import { api } from '@/lib/api';
+import { IMG } from '@/lib/images';
 
 export const metadata = { title: 'Wedding Venues', description: 'Wedding resorts in Jim Corbett and farmhouses & palace hotels in Delhi NCR.' };
 
@@ -15,7 +16,7 @@ export default async function VenuesPage({ searchParams }) {
 
   return (
     <>
-      <Media src="https://images.unsplash.com/photo-1519741497674-611481863552?w=2000&q=80" className="hero hero--short">
+      <Media src={IMG.reception} className="hero hero--short">
         <div className="hero__content">
           <span className="eyebrow">Our Collection</span>
           <h1>Wedding Venues</h1>

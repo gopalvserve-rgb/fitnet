@@ -6,8 +6,7 @@ import Ornament, { SectionHead } from '@/components/Ornament';
 import { api } from '@/lib/api';
 import { yearsOfLegacy } from '@/lib/site';
 
-const HERO = 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=2000&q=80';
-const ABOUT = 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1400&q=80';
+import { IMG } from '@/lib/images';
 
 export default async function Home() {
   const [destinations, venues, packages, testimonials] = await Promise.all([
@@ -18,7 +17,7 @@ export default async function Home() {
 
   return (
     <>
-      <Media src={HERO} className="hero">
+      <Media src={IMG.hero} className="hero" label="Indian bride and groom at a riverside mandap">
         <div className="hero__content">
           <span className="eyebrow">{yearsOfLegacy()} Years of Legacy · Jim Corbett · Delhi NCR</span>
           <h1>Where forever begins, <em>wild &amp; regal</em></h1>
@@ -52,7 +51,7 @@ export default async function Home() {
 
       <section className="section section--cream">
         <div className="container split">
-          <Media src={ABOUT} className="split__media" label="Couple at a destination wedding" />
+          <Media src={IMG.mehendi} className="split__media" label="Bride's mehendi hands with bangles" />
           <div>
             <span className="eyebrow">Why Choose Us</span>
             <h2>Crafted with heart, delivered with precision</h2>

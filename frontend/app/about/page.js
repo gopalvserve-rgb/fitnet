@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Media from '@/components/Media';
 import Ornament, { SectionHead } from '@/components/Ornament';
+import { IMG } from '@/lib/images';
 import { site, yearsOfLegacy } from '@/lib/site';
 
 export const metadata = { title: 'About Us', description: 'Meet the destination wedding planners behind unforgettable Jim Corbett and Delhi NCR weddings.' };
@@ -8,7 +9,7 @@ export const metadata = { title: 'About Us', description: 'Meet the destination 
 export default function AboutPage() {
   return (
     <>
-      <Media src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=2000&q=80" className="hero hero--short">
+      <Media src={IMG.haldi} className="hero hero--short">
         <div className="hero__content">
           <span className="eyebrow">Our Story</span>
           <h1>Planners, dreamers, storytellers</h1>
@@ -24,7 +25,7 @@ export default function AboutPage() {
             <p className="prose">We combine deep local relationships with resorts, décor artisans, caterers and transport partners, so you get premium experiences at honest prices.</p>
             <Link href="/contact#enquire" className="btn">Meet Our Planners</Link>
           </div>
-          <Media src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=1400&q=80" className="split__media" warm label="Wedding décor" />
+          <Media src={IMG.sangeet} className="split__media" warm label="Sangeet night by the bonfire" />
         </div>
       </section>
       <section className="section section--cream">
