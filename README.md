@@ -17,16 +17,24 @@ A full-stack wedding website: **Next.js 16** frontend, **Node.js / Express** API
 | `/about`, `/contact` | About page; contact details and form |
 | `/admin/login`, `/admin` | Admin dashboard: view, filter and paginate enquiries, change status, delete |
 
-## Run locally
+## Run locally (one command)
+
+Install Node.js 22.13 or newer from https://nodejs.org, then:
 
 ```bash
-npm run install:all
-ADMIN_EMAIL=you@example.com ADMIN_PASSWORD='a-long-password' npm run dev:backend   # API on :4000
-npm run dev:frontend                                                                # site on :3000
+git clone -b claude/awesome-cannon-dpmtpe https://github.com/gopalvserve-rgb/fitnet.git
+cd fitnet
+npm run local
 ```
 
-On first start the backend creates `backend/data/weddings.db` and seeds destinations, venues, packages and
-testimonials.
+The first run installs everything and builds the site, which takes a few minutes. It then prints the website
+address (http://localhost:3000), the admin address and the admin login. The password is saved in
+`backend/.env.local`. Press Ctrl+C to stop.
+
+**Export the database for the server team:** `npm run db:dump` writes `backend/data/weddings-dump.sql`.
+See [DEPLOY.md](DEPLOY.md) for the go-live guide.
+
+For development with hot reload instead, run `npm run dev:backend` and `npm run dev:frontend` in two terminals.
 
 **Customising**
 - Brand name, phone, WhatsApp, email and address: `frontend/lib/site.js`.
