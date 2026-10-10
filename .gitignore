@@ -1,0 +1,12 @@
+node_modules/
+.next/
+backend/data/
+*.db
+*.db-*
+.env
+.env.*
+!.env.example
+test-results/
+playwright-report/
+e2e/.tmp/
+
