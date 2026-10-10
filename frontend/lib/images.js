@@ -3,6 +3,7 @@
 const G = 'https://cdn.gamma.app/yqnjlktvyepx0zq/design-anything';
 export const IMG = {
   hero: `${G}/XtxNCRylHYEjhkY3HkTaY/W0htQoBfuJ0pGC7_mOPBl.jpg`,
+  heroMobile: `${G}/V753ZdP3feJOfPOu0BevR/8wlk6KXn6mRwWG2EOEvz0.jpg`,
   corbett: `${G}/Jdzbg4YclP1VJBw0jivZq/KKAS9WriAzCJJgjUbFgYL.jpg`,
   palace: `${G}/gj4kEuKGavc07FD99bgTW/P4wXqg-oJLfjHh7YuL9jM.jpg`,
   mehendi: `${G}/ALoohHgAuIfYGFlLGIg7P/W7b2UgTmuUBXFdK_5z_9T.jpg`,

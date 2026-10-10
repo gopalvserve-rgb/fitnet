@@ -17,9 +17,9 @@ export default async function Home() {
 
   return (
     <>
-      <Media src={IMG.hero} className="hero" label="Indian bride and groom at a riverside mandap">
+      <Media src={IMG.hero} mobileSrc={IMG.heroMobile} className="hero" label="Indian bride and groom at a riverside mandap">
         <div className="hero__content">
-          <span className="eyebrow">{yearsOfTrust()} Years of Trust · Jim Corbett · Delhi NCR</span>
+          <span className="eyebrow">{yearsOfTrust()} Years of Trust<span className="eyebrow__sep"> · </span><span className="eyebrow__line">Jim Corbett · Delhi NCR</span></span>
           <h1>Where forever begins, <em>wild &amp; regal</em></h1>
           <p>Luxury destination weddings in the forests of Jim Corbett and the palaces of Delhi NCR, planned end to end by one dedicated team.</p>
           <div className="hero__actions">
