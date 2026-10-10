@@ -1,5 +1,5 @@
 {
-  "name": "vanya-weddings",
+  "name": "vows7-weddings",
   "private": true,
   "scripts": {
     "local": "node scripts/start-local.mjs",

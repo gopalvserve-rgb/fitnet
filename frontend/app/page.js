@@ -4,6 +4,7 @@ import EnquiryForm from '@/components/EnquiryForm';
 import Media from '@/components/Media';
 import Ornament, { SectionHead } from '@/components/Ornament';
 import { api } from '@/lib/api';
+import { yearsOfLegacy } from '@/lib/site';
 
 const HERO = 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=2000&q=80';
 const ABOUT = 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1400&q=80';
@@ -19,7 +20,7 @@ export default async function Home() {
     <>
       <Media src={HERO} className="hero">
         <div className="hero__content">
-          <span className="eyebrow">Jim Corbett · Delhi NCR</span>
+          <span className="eyebrow">{yearsOfLegacy()} Years of Legacy · Jim Corbett · Delhi NCR</span>
           <h1>Where forever begins, <em>wild &amp; regal</em></h1>
           <p>Luxury destination weddings in the forests of Jim Corbett and the palaces of Delhi NCR, planned end to end by one dedicated team.</p>
           <div className="hero__actions">
@@ -56,7 +57,7 @@ export default async function Home() {
             <span className="eyebrow">Why Choose Us</span>
             <h2>Crafted with heart, delivered with precision</h2>
             <Ornament />
-            <p className="prose">We are a Delhi-based team of planners, designers and hospitality experts. We know every riverside lawn in Corbett and every palace ballroom in NCR, and we handle all of it: venue, stay, décor, food, entertainment and guest logistics.</p>
+            <p className="prose">For {yearsOfLegacy()} years, our Delhi-based team of planners, designers and hospitality experts has crafted celebrations. We know every riverside lawn in Corbett and every palace ballroom in NCR, and we handle all of it: venue, stay, décor, food, entertainment and guest logistics.</p>
             <ul className="ticks">
               <li>Handpicked partner resorts, palaces and farmhouses</li>
               <li>Transparent, all-inclusive packages with no hidden costs</li>
@@ -70,7 +71,7 @@ export default async function Home() {
 
       <section className="section section--forest">
         <div className="container stats">
-          {[['350+', 'Weddings planned'], ['40+', 'Partner venues'], ['12', 'Years of experience'], ['4.9★', 'Couple rating']].map(([n, l]) => (
+          {[['350+', 'Weddings planned'], ['40+', 'Partner venues'], [String(yearsOfLegacy()), 'Years of legacy'], ['4.9★', 'Couple rating']].map(([n, l]) => (
             <div key={l}><div className="stat__num">{n}</div><div className="stat__label">{l}</div></div>
           ))}
         </div>

@@ -2,16 +2,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { nav, site } from '@/lib/site';
-
-export function Logo() {
-  return (
-    <Link href="/" className="logo" aria-label={`${site.name} home`}>
-      <span className="logo__name">{site.name}</span>
-      <span className="logo__sub">Destination Weddings</span>
-    </Link>
-  );
-}
+import { nav } from '@/lib/site';
+import Logo from './Logo';
 
 export default function Header() {
   const [open, setOpen] = useState(false);

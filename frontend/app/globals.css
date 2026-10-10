@@ -122,9 +122,15 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(8px);
 }
 .header__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.logo { display: flex; flex-direction: column; line-height: 1; }
-.logo__name { font-family: var(--font-display); font-size: 1.9rem; color: var(--forest-deep); letter-spacing: 0.04em; }
-.logo__sub { font-size: 0.6rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--gold-dark); margin-top: 6px; }
+.logo { display: inline-flex; align-items: center; gap: 12px; line-height: 1; }
+.logo__text { display: flex; flex-direction: column; }
+.logo__name { font-family: var(--font-display); font-size: 2.05rem; font-weight: 500; color: var(--forest-deep); letter-spacing: 0.03em; }
+.logo__name em { color: var(--gold); font-style: italic; margin-left: 1px; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+.logo__sub { font-size: 0.58rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--gold-dark); margin-top: 5px; }
+.logo--light { --logo-leaf: var(--gold-light); }
+.logo--light .logo__name { color: var(--ivory); }
+.logo--light .logo__sub { color: var(--gold-light); }
+@media (max-width: 420px) { .logo svg { width: 38px; height: 38px; } .logo__name { font-size: 1.7rem; } }
 .nav { display: flex; align-items: center; gap: 30px; }
 .nav a:not(.btn) {
   font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 400;
@@ -268,7 +274,6 @@ img { max-width: 100%; display: block; }
 .footer ul { list-style: none; margin: 0; padding: 0; }
 .footer li { padding: 4px 0; }
 .footer a:hover { color: var(--gold-light); }
-.footer .logo__name { color: var(--ivory); }
 .footer__bottom { margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(226,214,196,0.15); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; }
 @media (max-width: 860px) { .footer__grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .footer__grid { grid-template-columns: 1fr; } }

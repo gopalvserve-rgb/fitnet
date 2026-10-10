@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Media from '@/components/Media';
 import Ornament, { SectionHead } from '@/components/Ornament';
+import { site, yearsOfLegacy } from '@/lib/site';
 
 export const metadata = { title: 'About Us', description: 'Meet the destination wedding planners behind unforgettable Jim Corbett and Delhi NCR weddings.' };
 
@@ -17,9 +18,9 @@ export default function AboutPage() {
         <div className="container split">
           <div>
             <span className="eyebrow">Who We Are</span>
-            <h2>A decade of weddings in the wild &amp; the city</h2>
+            <h2>{yearsOfLegacy()} years of legacy in the wild &amp; the city</h2>
             <Ornament />
-            <p className="prose">We started with a single riverside wedding in Corbett. Since then we have planned hundreds of celebrations across Uttarakhand’s forests and Delhi NCR’s grandest venues.</p>
+            <p className="prose">Vows7 is a brand of {site.company}. Since {site.founded} we have grown from a single riverside wedding in Corbett to hundreds of celebrations across Uttarakhand’s forests and Delhi NCR’s grandest venues.</p>
             <p className="prose">We combine deep local relationships with resorts, décor artisans, caterers and transport partners, so you get premium experiences at honest prices.</p>
             <Link href="/contact#enquire" className="btn">Meet Our Planners</Link>
           </div>

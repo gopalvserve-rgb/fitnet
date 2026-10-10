@@ -9,7 +9,7 @@ const out = process.argv[2] || path.join(path.dirname(config.dbPath), 'weddings-
 const db = new DatabaseSync(config.dbPath, { readOnly: true });
 const quote = (v) => (v === null ? 'NULL' : typeof v === 'number' || typeof v === 'bigint' ? String(v) : `'${String(v).replace(/'/g, "''")}'`);
 
-const lines = ['-- Vanya Weddings SQLite dump', `-- Created ${new Date().toISOString()}`, 'PRAGMA foreign_keys=OFF;', 'BEGIN TRANSACTION;'];
+const lines = ['-- Vows7 SQLite dump', `-- Created ${new Date().toISOString()}`, 'PRAGMA foreign_keys=OFF;', 'BEGIN TRANSACTION;'];
 const objects = db.prepare("SELECT type, name, sql FROM sqlite_master WHERE sql IS NOT NULL AND name NOT LIKE 'sqlite_%' ORDER BY type = 'index', rowid").all();
 for (const o of objects) {
   lines.push(`${o.sql};`);

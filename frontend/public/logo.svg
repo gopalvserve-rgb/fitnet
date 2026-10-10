@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="600" height="160">
+  <g transform="translate(4 8)">
+    <g fill="none" stroke="#b8945f" stroke-width="2.2"><circle cx="25" cy="39" r="13"/><circle cx="39" cy="39" r="13"/></g>
+    <g fill="#1f3a2f"><path d="M32 24 C 24 22, 19 15, 20 7 C 27 9, 31 16, 32 24 Z"/><path d="M32 24 C 40 22, 45 15, 44 7 C 37 9, 33 16, 32 24 Z"/></g>
+    <circle cx="32" cy="26" r="2.2" fill="#b8945f"/>
+  </g>
+  <text x="80" y="47" style="font-variant-numeric: lining-nums" font-family="'Cormorant Garamond', Georgia, serif" font-size="40" fill="#132820">Vows<tspan fill="#b8945f" font-style="italic">7</tspan></text>
+  <text x="82" y="66" font-family="Jost, Arial, sans-serif" font-size="9.5" letter-spacing="3.2" fill="#8f6f3f">DESTINATION WEDDINGS</text>
+</svg>

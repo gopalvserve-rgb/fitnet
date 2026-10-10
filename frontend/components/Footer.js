@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { nav, site } from '@/lib/site';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
@@ -7,9 +8,9 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div>
-            <div className="logo"><span className="logo__name">{site.name}</span><span className="logo__sub">Destination Weddings</span></div>
+            <Logo light />
             <p style={{ marginTop: 22 }}>
-              Curating unforgettable destination weddings in the wilderness of Jim Corbett and the grandeur of Delhi NCR.
+              Curating unforgettable destination weddings in the wilderness of Jim Corbett and the grandeur of Delhi NCR since {site.founded}.
             </p>
           </div>
           <div>
@@ -35,7 +36,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer__bottom">
-          <span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} {site.name} by {site.company}. All rights reserved.</span>
           <span>Jim Corbett · Delhi · Gurugram · Noida</span>
         </div>
       </div>

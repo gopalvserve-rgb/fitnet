@@ -12,6 +12,10 @@ import WhatsApp from '@/components/WhatsApp';
 import { site } from '@/lib/site';
 
 export const metadata = {
+  metadataBase: new URL(site.url),
+  publisher: site.company,
+  authors: [{ name: site.company }],
+  openGraph: { siteName: site.name, type: 'website', locale: 'en_IN', images: ['/logo.svg'] },
   title: { default: `${site.name} | Destination Weddings in Jim Corbett & Delhi NCR`, template: `%s | ${site.name}` },
   description:
     'Luxury destination wedding planners for Jim Corbett resorts and Delhi NCR farmhouses & palaces. Venues, décor, catering and complete wedding planning.',

@@ -1,4 +1,4 @@
-# Vanya Weddings — Destination weddings in Jim Corbett & Delhi NCR
+# Vows7 — Destination weddings in Jim Corbett & Delhi NCR
 
 A full-stack wedding website: **Next.js 16** frontend, **Node.js / Express** API, **SQLite** database
 (Node's built-in `node:sqlite`, no native modules to compile).

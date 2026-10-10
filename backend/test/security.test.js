@@ -36,10 +36,10 @@ describe('broken access control', () => {
   });
 
   it('rejects forged, tampered, expired and alg=none tokens', async () => {
-    const forged = jwt.sign({ email: 'x' }, 'wrong-secret', { subject: '1', issuer: 'vanya-weddings' });
-    const expired = jwt.sign({ email: 'x' }, config.jwtSecret, { subject: '1', issuer: 'vanya-weddings', expiresIn: -10 });
+    const forged = jwt.sign({ email: 'x' }, 'wrong-secret', { subject: '1', issuer: 'vows7' });
+    const expired = jwt.sign({ email: 'x' }, config.jwtSecret, { subject: '1', issuer: 'vows7', expiresIn: -10 });
     const wrongIssuer = jwt.sign({ email: 'x' }, config.jwtSecret, { subject: '1', issuer: 'someone-else' });
-    const none = `${Buffer.from('{"alg":"none","typ":"JWT"}').toString('base64url')}.${Buffer.from('{"sub":"1","email":"x","iss":"vanya-weddings"}').toString('base64url')}.`;
+    const none = `${Buffer.from('{"alg":"none","typ":"JWT"}').toString('base64url')}.${Buffer.from('{"sub":"1","email":"x","iss":"vows7"}').toString('base64url')}.`;
     const good = (await login(app)).split('=')[1];
     const [h, , s] = good.split('.');
     const tampered = `${h}.${Buffer.from('{"sub":"999","email":"evil"}').toString('base64url')}.${s}`;

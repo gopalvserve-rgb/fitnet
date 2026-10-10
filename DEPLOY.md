@@ -9,8 +9,8 @@ Requirements: Linux server, **Node.js 22.13+**, nginx, pm2 (or systemd), and an 
 
 ## Steps
 ```bash
-git clone -b claude/awesome-cannon-dpmtpe https://github.com/gopalvserve-rgb/fitnet.git /var/www/vanya
-cd /var/www/vanya
+git clone -b claude/awesome-cannon-dpmtpe https://github.com/gopalvserve-rgb/fitnet.git /var/www/vows7
+cd /var/www/vows7
 npm --prefix backend ci --omit=dev && npm --prefix frontend ci
 cp backend/.env.example backend/.env      # fill in every value (see below)
 npm run build
@@ -38,8 +38,8 @@ The dump contains customer enquiries and the admin password hash, so treat it as
 
 ## Start (pm2)
 ```bash
-pm2 start "node --env-file=backend/.env --disable-warning=ExperimentalWarning backend/src/server.js" --name vanya-api
-PORT=3000 API_URL=http://127.0.0.1:4000 pm2 start "npm --prefix frontend start" --name vanya-web
+pm2 start "node --env-file=backend/.env --disable-warning=ExperimentalWarning backend/src/server.js" --name vows7-api
+PORT=3000 API_URL=http://127.0.0.1:4000 pm2 start "npm --prefix frontend start" --name vows7-web
 pm2 save && pm2 startup
 ```
 

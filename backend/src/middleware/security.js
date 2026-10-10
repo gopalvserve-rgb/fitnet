@@ -49,7 +49,7 @@ export function requireAdmin(req, res, next) {
   const token = req.cookies?.[COOKIE_NAME];
   if (!token) return res.status(401).json({ error: 'Authentication required' });
   try {
-    const payload = jwt.verify(token, config.jwtSecret, { algorithms: ['HS256'], issuer: 'vanya-weddings' });
+    const payload = jwt.verify(token, config.jwtSecret, { algorithms: ['HS256'], issuer: 'vows7' });
     req.admin = { id: Number(payload.sub), email: payload.email };
     next();
   } catch {
@@ -62,7 +62,7 @@ export function signSession(admin) {
   return jwt.sign({ email: admin.email }, config.jwtSecret, {
     algorithm: 'HS256',
     subject: String(admin.id),
-    issuer: 'vanya-weddings',
+    issuer: 'vows7',
     expiresIn: config.jwtTtlSeconds,
   });
 }
