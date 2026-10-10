@@ -24,7 +24,7 @@ export default function Logo({ light = false }) {
       <Emblem />
       <span className="logo__text">
         <span className="logo__name">Vows<em>7</em></span>
-        <span className="logo__sub">Destination Weddings</span>
+        <span className="logo__sub">By {site.company}</span>
       </span>
     </Link>
   );

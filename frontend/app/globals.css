@@ -126,11 +126,12 @@ img { max-width: 100%; display: block; }
 .logo__text { display: flex; flex-direction: column; }
 .logo__name { font-family: var(--font-display); font-size: 2.05rem; font-weight: 500; color: var(--forest-deep); letter-spacing: 0.03em; }
 .logo__name em { color: var(--gold); font-style: italic; margin-left: 1px; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
-.logo__sub { font-size: 0.58rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--gold-dark); margin-top: 5px; }
+.logo__sub { font-size: 0.62rem; letter-spacing: 0.12em; max-width: 340px; line-height: 1.5; text-transform: uppercase; color: var(--gold-dark); margin-top: 5px; }
 .logo--light { --logo-leaf: var(--gold-light); }
 .logo--light .logo__name { color: var(--ivory); }
 .logo--light .logo__sub { color: var(--gold-light); }
-@media (max-width: 420px) { .logo svg { width: 38px; height: 38px; } .logo__name { font-size: 1.7rem; } }
+@media (max-width: 1180px) and (min-width: 1081px) { .nav { gap: 22px; } }
+@media (max-width: 520px) { .logo svg { width: 40px; height: 40px; } .logo__name { font-size: 1.75rem; } .logo__sub { font-size: 0.5rem; letter-spacing: 0.08em; max-width: 190px; } }
 .nav { display: flex; align-items: center; gap: 30px; }
 .nav a:not(.btn) {
   font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 400;

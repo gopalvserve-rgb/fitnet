@@ -21,5 +21,5 @@ export const nav = [
   { href: '/contact', label: 'Contact' },
 ];
 
-/** Years in business, so the "legacy" figure stays correct every year. */
-export const yearsOfLegacy = () => new Date().getFullYear() - site.founded;
+/** Years in business, so the "years of trust" figure stays correct every year. */
+export const yearsOfTrust = () => new Date().getFullYear() - site.founded;
