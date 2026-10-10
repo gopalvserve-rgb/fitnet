@@ -114,7 +114,7 @@ img { max-width: 100%; display: block; }
 }
 .media--warm { background-image: var(--img), linear-gradient(135deg, #5a2e2a 0%, #8f5a3f 50%, var(--gold) 100%); }
 @media (max-width: 720px) {
-  .media[data-mobile-img] { background-image: var(--img-m), linear-gradient(160deg, var(--forest) 0%, #2f5443 55%, var(--gold-dark) 100%); }
+  .media[data-mobile-img] { background-image: var(--img-m), linear-gradient(160deg, var(--forest) 0%, #2f5443 55%, var(--gold-dark) 100%); background-position: center 75%; }
 }
 
 /* Header */
