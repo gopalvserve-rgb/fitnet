@@ -31,7 +31,6 @@ export default function Footer() {
             <ul>
               <li><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a></li>
               <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
-              <li style={{ marginTop: 6 }}><a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener noreferrer">WhatsApp us</a></li>
               <li style={{ marginTop: 6 }}>{site.addressLines.map((l) => <span key={l} style={{ display: 'block' }}>{l}</span>)}</li>
             </ul>
           </div>

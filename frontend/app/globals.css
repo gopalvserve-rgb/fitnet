@@ -305,7 +305,6 @@ img { max-width: 100%; display: block; }
 .fab:hover .fab__label, .fab:focus-visible .fab__label { opacity: 1; }
 @media (max-width: 720px) {
   .fab-stack { right: 14px; bottom: 14px; gap: 10px; }
-  /* On phones keep the call button always labelled so it is obvious. */
   .fab--call { width: 150px; }
   .fab--call .fab__label { opacity: 1; }
 }
