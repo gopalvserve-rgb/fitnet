@@ -8,7 +8,7 @@ import './globals.css';
 import { headers } from 'next/headers';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import WhatsApp from '@/components/WhatsApp';
+import FloatingActions from '@/components/FloatingActions';
 import { site } from '@/lib/site';
 
 export const metadata = {
@@ -32,7 +32,7 @@ export default async function RootLayout({ children }) {
         <Header />
         <main id="main">{children}</main>
         <Footer />
-        <WhatsApp />
+        <FloatingActions />
       </body>
     </html>
   );

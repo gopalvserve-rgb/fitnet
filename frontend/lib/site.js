@@ -5,12 +5,19 @@ export const site = {
   company: 'Vserve Ecommerce Sales and Services Pvt Ltd',
   founded: 2014,
   tagline: 'Destination Weddings · Jim Corbett & Delhi NCR',
-  phone: '+91 98100 00000',
-  whatsapp: '919810000000',
+  phone: '+91 72900 92222',
+  whatsapp: '917290092222',
   email: 'hello@vows7.com',
-  address: 'Saket, New Delhi 110017',
+  addressLines: [
+    '2nd Floor, Ahinsa Compound, 485/11A',
+    'Uberoi Compound, Ghisa, Dilshad Garden',
+    'Delhi 110095',
+  ],
   instagram: 'https://instagram.com/',
 };
+
+// Single-line address (for inline text and schema.org).
+site.address = site.addressLines.join(', ');
 
 export const nav = [
   { href: '/destinations/jim-corbett', label: 'Jim Corbett' },

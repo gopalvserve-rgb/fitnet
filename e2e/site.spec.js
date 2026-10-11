@@ -91,11 +91,13 @@ test.describe('public pages', () => {
     }
   });
 
-  test('footer links and WhatsApp button', async ({ page }) => {
+  test('footer links and floating call / WhatsApp buttons', async ({ page }) => {
     await page.goto('/');
-    const wa = page.getByRole('link', { name: 'Chat on WhatsApp' });
-    await expect(wa).toHaveAttribute('href', /^https:\/\/wa\.me\//);
+    const wa = page.getByRole('link', { name: 'Chat with us on WhatsApp' });
+    await expect(wa).toHaveAttribute('href', /^https:\/\/wa\.me\/917290092222/);
     await expect(wa).toHaveAttribute('rel', /noopener/);
+    const call = page.getByRole('link', { name: /Call us at/ });
+    await expect(call).toHaveAttribute('href', 'tel:+917290092222');
     await page.locator('footer').getByRole('link', { name: 'NCR Farmhouses & Palaces' }).click();
     await expect(page).toHaveURL('/venues?destination=delhi-ncr');
   });

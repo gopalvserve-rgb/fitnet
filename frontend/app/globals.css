@@ -295,9 +295,19 @@ img { max-width: 100%; display: block; }
 @media (max-width: 860px) { .footer__grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .footer__grid { grid-template-columns: 1fr; } }
 
-.wa-float {
-  position: fixed; right: 22px; bottom: 22px; z-index: 40; width: 56px; height: 56px; border-radius: 50%;
-  background: #25d366; color: #fff; display: grid; place-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+.fab-stack { position: fixed; right: 20px; bottom: 20px; z-index: 40; display: flex; flex-direction: column; gap: 12px; }
+.fab { display: inline-flex; align-items: center; gap: 0; height: 56px; width: 56px; padding: 0; border-radius: 30px; color: #fff; overflow: hidden; box-shadow: 0 10px 28px rgba(0,0,0,0.25); transition: width 0.3s ease, background 0.2s; white-space: nowrap; }
+.fab svg { flex: 0 0 56px; width: 56px; height: 26px; }
+.fab__label { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; padding-right: 20px; opacity: 0; transition: opacity 0.2s; }
+.fab--wa { background: #25d366; }
+.fab--call { background: var(--gold); }
+.fab:hover, .fab:focus-visible { width: 160px; }
+.fab:hover .fab__label, .fab:focus-visible .fab__label { opacity: 1; }
+@media (max-width: 720px) {
+  .fab-stack { right: 14px; bottom: 14px; gap: 10px; }
+  /* On phones keep the call button always labelled so it is obvious. */
+  .fab--call { width: 150px; }
+  .fab--call .fab__label { opacity: 1; }
 }
 
 /* Admin */

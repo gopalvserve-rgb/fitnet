@@ -18,9 +18,10 @@ export default async function ContactPage({ searchParams }) {
           <Ornament />
           <p className="prose">Whether you dream of pheras by a jungle river or a grand palace reception, we would love to hear from you.</p>
           <dl className="facts" style={{ gridTemplateColumns: '1fr' }}>
-            <div><dt>Call / WhatsApp</dt><dd><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a></dd></div>
+            <div><dt>Call</dt><dd><a href={`tel:${site.phone.replace(/[^\d+]/g, '')}`}>{site.phone}</a></dd></div>
+            <div><dt>WhatsApp</dt><dd><a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener noreferrer">{site.phone}</a></dd></div>
             <div><dt>Email</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
-            <div><dt>Studio</dt><dd>{site.address}</dd></div>
+            <div><dt>Studio</dt><dd>{site.addressLines.map((l) => <span key={l} style={{ display: 'block' }}>{l}</span>)}</dd></div>
           </dl>
         </div>
         <EnquiryForm note={note} />
